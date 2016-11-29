@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css?v=1.2&">
+    <link rel="stylesheet" href="css/finaltilesgallery.css">
+    
+  </head>
+  <body>
+    
+    <img class="loader" >
+    <header class="header">
+      <img id="header-image" />
+    </header>
+    <div id="gallery" class="final-tiles-gallery caption-bottom" style="">
+      <div id="contenido1" class="ftg-items">
+      </div>
+    </div>
+    <footer class="footer">
+
+     <input id="pic" value="1" type="text">
+<input type="submit" value="remover" id="boton6" class="boton6">
+
+      <p>
+        <em><strong><span class="caps">Tag us at</span> <span class="purple">#NYXCOSMETICS</span></strong></em><br />
+        We may share your posts on our site &amp; social media. For complete Terms go to <a class="purple" href="">nyxcosmetics.com/olapictos.html</a>
+      </p>
+    </footer>
+  
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="js/jquery.animate-enhanced.min.js"></script>
+  <script src="js/finaltilesgallery.js?v=1.1"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main-new.js?v=1.1"></script>
+
+
+
+<div id="botones" style="visibility: hidden;">
+ <input type="submit" value="PINTAR" id="boton5" class="boton5">
+ <input type="submit" value="ABAJO" id="boton1" class="boton1"><input type="submit" value="ARRIBA" id="boton2" class="boton2"></div>
+
+
+<script>
+
+
+$('#boton5').click(function(){
+        $('div#contenido1').children('div').slice(0,25).remove();
+       
+});
+
+$('#boton6').click(function(){
+        varvalor='pic'+$('#pic').val();
+        console.log('varvalor'+varvalor)
+        $('#'+varvalor).remove();
+       
+});
+ 
+$('#boton1').click(function(){
+    $("html, body").animate({ scrollTop: $(document).height() }, 200000, "linear");//200000
+});
+
+
+$('#boton2').click(function(){
+    location.reload();
+
+});
+
+
+$(window).scroll(function() {
+    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+       //$('#boton2').click();
+    }
+    if ($(this).scrollTop() < 1) {
+        //$('#boton1').click();
+    }
+   
+});/* 
+*/
+window.gvar=0;
+
+function borrarpics(){
+    if(window.gvar==0){
+       //$( "#boton5" ).click();
+     }
+   window.gvar++;
+}
+
+$.fn.extend({ 
+  // Devuelve true si el elemento está en window
+  isInScene : function(arg)
+  { 
+    // Fuerza que arg sea un objeto
+    arg = arg || {};
+    // Valor por defecto de desfase
+    arg.desfase = arg.desfase || 0;
+    // Fuerza a que desfase sea númerico
+    arg.desfase = parseInt(arg.desfase,10);
+ 
+    // Posición vertical del elemento respecto al principio del documento
+    var pos_container = $(this).offset().top;
+ 
+    // Altura del elemento
+    var container_height = $(this).outerHeight();
+ 
+    // Posición vertical de document
+    var pos_document = $(document).scrollTop();
+ 
+    // Alto ventana
+    var window_height = $(window).height(); 
+ 
+    return (pos_document+window_height > pos_container+arg.desfase && pos_container+container_height > pos_document+arg.desfase);
+  }
+});
+ 
+// Utilizamos el método isInScene
+$(document).scroll(function(e)
+{ 
+
+
+      if($('#pic40').isInScene())
+        {
+          //borrarpics();
+        }else{
+
+        }
+        
+
+
+});
+
+
+</script>
+
+</body>
+</html>
