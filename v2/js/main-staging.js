@@ -17,10 +17,7 @@ var getUrlVars = function()
 var streamId = getUrlVars()["streamId"];
 	//var url = 'https://photorankapi-a.akamaihd.net/streams/2156572822/media/recent?auth_token=60c46087c1065c0abb21c53f30d373046f4dacf4d5f67ccb1b3161267db1bdc1&version=v2.2';
 var url = 'https://photorankapi-a.akamaihd.net/streams/'+streamId+'/media/recent?auth_token=60c46087c1065c0abb21c53f30d373046f4dacf4d5f67ccb1b3161267db1bdc1&version=v2.2';
-
-	$('#loader').attr("src", '/nyx/img/loader_'+streamId+'.jpg');
 	$('#header-image').attr("src", '/nyx/img/'+streamId+'.png');
-	
 	$.ajax({
 		type: 'GET',
 		dataType: 'json',

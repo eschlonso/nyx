@@ -1,26 +1,7 @@
 (function () {
 
-var getUrlVars = function()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-       	console.log(hash[1]);
-    }
-    return vars;
-}
+	var url = 'https://photorankapi-a.akamaihd.net/streams/2156572822/media/recent?auth_token=60c46087c1065c0abb21c53f30d373046f4dacf4d5f67ccb1b3161267db1bdc1&version=v2.2';
 
-var streamId = getUrlVars()["streamId"];
-	//var url = 'https://photorankapi-a.akamaihd.net/streams/2156572822/media/recent?auth_token=60c46087c1065c0abb21c53f30d373046f4dacf4d5f67ccb1b3161267db1bdc1&version=v2.2';
-var url = 'https://photorankapi-a.akamaihd.net/streams/'+streamId+'/media/recent?auth_token=60c46087c1065c0abb21c53f30d373046f4dacf4d5f67ccb1b3161267db1bdc1&version=v2.2';
-
-	$('#loader').attr("src", '/nyx/img/loader_'+streamId+'.jpg');
-	$('#header-image').attr("src", '/nyx/img/'+streamId+'.png');
-	
 	$.ajax({
 		type: 'GET',
 		dataType: 'json',

@@ -1,3 +1,4 @@
+var myVariable1 = 0;
 
 var qualifyURL = function (url) {
     var img = document.createElement('img');
@@ -22,7 +23,6 @@ var getUrlVars = function()
 }
 
 var streamId = getUrlVars()["streamId"];
-
 
 
 (function ($, window, document, undefined) {
@@ -62,7 +62,16 @@ var streamId = getUrlVars()["streamId"];
             allowEnlargement: true,
             autoLoadURL: null,
             autoLoadOffset: 50,
-            onComplete: function () {},
+            onComplete: function () {
+
+
+                //$( "#boton1" ).click();
+
+                
+            //alert("complete");
+            //mifun();
+        //    $( "#boton5" ).click();
+        },
             onUpdate: function () {},
             debug: false
         };
@@ -138,7 +147,8 @@ var streamId = getUrlVars()["streamId"];
                         if ($(window).scrollTop() >= $(document).height() - $(window).height() - instance.settings.autoLoadOffset) {
                             instance.isLoading = true;
                             if(nextURL == null){
-	                            url = 'https://photorankapi-a.akamaihd.net/streams/'+streamId+'/media/recent?auth_token=60c46087c1065c0abb21c53f30d373046f4dacf4d5f67ccb1b3161267db1bdc1&version=v2.2';
+	                            //url = 'https://photorankapi-a.akamaihd.net/streams/'+streamId+'/media/recent?auth_token=60c46087c1065c0abb21c53f30d373046f4dacf4d5f67ccb1b3161267db1bdc1&version=v2.2&count=50';
+                                 url ='https://photorankapi-a.akamaihd.net/streams/1708220103/media/recent?auth_token=60c46087c1065c0abb21c53f30d373046f4dacf4d5f67ccb1b3161267db1bdc1&version=v2.2&count=100';
                             } else {
 	                            url = nextURL;
                             }
@@ -149,6 +159,8 @@ var streamId = getUrlVars()["streamId"];
                                 if ($.trim(html).length == 0) {
                                     instance.ajaxComplete = true;
                                 } else {
+                                    //alert("initialize");
+                                    
 	                                for (var i = 0; i < html.data._embedded.media.length; i++) {
 										var image_url = html.data._embedded.media[i].images.original;
 										var username = html.data._embedded.media[i]._embedded.uploader.username;
@@ -169,6 +181,7 @@ var streamId = getUrlVars()["streamId"];
                                     instance.$element.find(".ftg-items").append(media);
                                     instance.tiles = instance.$element.find('.tile')
                                     instance.loadImage();
+                                    //mifun();
                                 }
                             });
                         }
@@ -265,7 +278,28 @@ var streamId = getUrlVars()["streamId"];
 
             var $item = $tile.find('.item');
             function next() {
+
+
+
+
+
+
+                //alert(instance._loadedImages+"//"+instance.tiles.length);
                 instance.add(instance._loadedImages);
+
+
+/*
+if (myVariable1>0){
+      //borra 50 pics anteriores.
+      $('div#contenido1').children('div').slice(0,50).remove();//remove()
+      alert("borrando")
+        instance._loadedImages=0;
+        instance.tiles=50;
+    }
+myVariable1++;
+*/
+
+
 
                 if (++instance._loadedImages < instance.tiles.length) {
                     instance.loadImage();
@@ -389,6 +423,7 @@ var streamId = getUrlVars()["streamId"];
             this.edges = tmp;
         },
         add: function (tileIndex) {
+            console.log('---------------------------'+tileIndex);
             var $t = this.tiles.eq(tileIndex);
 
             var $item = $t.find('.item');
@@ -415,7 +450,7 @@ var streamId = getUrlVars()["streamId"];
             hEdge.enlarged = false;
             
             //is the tile wider than the current edge?
-            console.log("=> ", hEdge.left, w, this.settings.margin);
+            console.log("=>** ", hEdge.left, w, this.settings.margin);
             if (hEdge.width < w + this.settings.margin) {
                 hEdge.case = 'Te';
                 this.print('Te', hEdge.width);
