@@ -408,33 +408,17 @@ var name = $(this).attr('id');
 
      //console.log(name);
 
+console.log('----------------------------------------------');
 
-console.log('+++++++ VISIBLES');
-//console.log($('div').withinviewport());
-/*
-var hege = ["Cecilie", "Lone"];
-var stale = ["Emil", "Tobias", "Linus"];
-var children = hege.concat(stale); 
-*/
-window.listaVisibles=$('div').withinviewport();
-
-window.listaVisibles=ordenarLista(window.listaVisibles);
-console.log(window.listaVisibles);
-
-window.listaV=window.listaV.concat(window.listaVisibles);
-//console.log('####listaV');
-
-
-
-console.log('??')
-console.log(window.listaV);
+//console.log('??')
+//console.log(window.listaV);
 //window.listaV=window.listaV.unique();
-window.listaV = unique1(window.listaV);
-console.log('==')
-console.log(window.listaV);
-var array = listaV.split(',');
+//window.listaV = unique1(window.listaV);
+//console.log('==')
+//console.log(window.listaV);
+//var array = listaV.split(',');
 
-console.log(array);
+//console.log(array);
 
 
 
@@ -448,8 +432,8 @@ window.listaNoVisible=$('div.out-man');
 window.listaNoVisible=ordenarLista(window.listaNoVisible);
 console.log(window.listaNoVisible);
 
-window.listaNV=window.listaNV.concat(window.listaNoVisible);
-console.log(window.listaNV);
+//window.listaNV=window.listaNV.concat(window.listaNoVisible);
+//console.log(window.listaNV);
 
 //console.log('///////1');
 
@@ -458,6 +442,25 @@ console.log(window.listaNV);
 //$(elem).withinviewport().myFun();
 
 //console.log(window.listaBORRAR);
+
+
+console.log('+++++++ VISIBLES');
+//console.log($('div').withinviewport());
+/*
+var hege = ["Cecilie", "Lone"];
+var stale = ["Emil", "Tobias", "Linus"];
+var children = hege.concat(stale); 
+*/
+window.listaVisibles=$('div').withinviewport();
+
+window.listaVisibles=ordenarLista(window.listaVisibles);
+console.log(window.listaVisibles);
+
+//window.listaV=window.listaV.concat(window.listaVisibles);
+//console.log('####listaV');
+
+
+
 
     }
 
