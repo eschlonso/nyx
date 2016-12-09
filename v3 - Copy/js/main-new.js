@@ -35,7 +35,7 @@ var getUrlVars = function()
 			for (var i = 0; i < data.data._embedded.media.length; i++) {
 				var image_url = data.data._embedded.media[i].images.original;
 				var username = data.data._embedded.media[i]._embedded.uploader.username;
-				media = '<div id="'+i+'" class="tile">' +
+				media = '<div id="pic'+i+'" class="tile">' +
 						 				'<a class="tile-inner" href="' + image_url + '">' +
 										'<img class="item" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="' + image_url + '" />' +
 										'<span class=\'subtitle\'>@' + username + '</span>' +

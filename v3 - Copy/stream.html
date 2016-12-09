@@ -10,24 +10,6 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css?v=1.2&">
     <link rel="stylesheet" href="css/finaltilesgallery.css">
-
-
-
-
-
-       <!-- jQuery and the other 2 scripts are all required to run the Within Viewport jQuery plugin -->
-    <script src="js/withinviewport.js"></script>
-    <script src="inc/jquery.min.js"></script>
-    <script src="js/jquery.withinviewport.js"></script>
-
-    
-
-    <!-- The following files are only needed for this demo 
-    <link href="inc/demo.css" rel="stylesheet" media="all">-->
-    <script src="inc/demo.js"></script>
-
-
-
     
   </head>
   <body>
@@ -44,8 +26,6 @@
 
      <input id="pic" value="1" type="text">
 <input type="submit" value="remover" id="boton6" class="boton6">
-
-<input type="submit" value="es visible 1?" id="boton33" >
 
       <p>
         <em><strong><span class="caps">Tag us at</span> <span class="purple">#NYXCOSMETICS</span></strong></em><br />
@@ -65,10 +45,7 @@
 
 <div id="botones" style="visibility: hidden;">
  <input type="submit" value="PINTAR" id="boton5" class="boton5">
- <input type="submit" value="ABAJO" id="boton1" class="boton1"><input type="submit" value="ARRIBA" id="boton2" class="boton2">
-
-
- </div>
+ <input type="submit" value="ABAJO" id="boton1" class="boton1"><input type="submit" value="ARRIBA" id="boton2" class="boton2"></div>
 
 
 <script>
@@ -80,7 +57,7 @@ $('#boton5').click(function(){
 });
 
 $('#boton6').click(function(){
-        varvalor=''+$('#pic').val();
+        varvalor='pic'+$('#pic').val();
         console.log('varvalor'+varvalor)
         $('#'+varvalor).remove();
        
@@ -93,12 +70,6 @@ $('#boton1').click(function(){
 
 $('#boton2').click(function(){
     location.reload();
-
-});
-
-
-$('#boton33').click(function(){
-    mifun33();
 
 });
 
@@ -164,18 +135,6 @@ $(document).scroll(function(e)
 
 
 });
-
-
-
-
-function mifun33(){
-var elem = document.getElementById("1");
- 
-// Returns true if it's completely visible
-alert(withinviewport(elem)+' - '+elem);
-
-}
-
 
 
 </script>
