@@ -175,30 +175,20 @@ return listaOrdenada;
         }
 
         // Add a container and put the boxes inside
-        $body.append('<div id="contenido1" style="width:' + (boxWidth * 10 + 20) + 'px;">' + boxHTML + '</div>');
+        $body.append('<div id="BoxContent" style="width:' + (boxWidth * 10 + 20) + 'px;">' + boxHTML + '</div>');
 
         // Set the styles so everything is nice and proportional to this device's screen
-        //$body.append('<style>#contenido1 div { width:' + boxWidth + 'px;height:' + boxWidth + 'px;line-height:' + boxWidth + 'px; }</style>');
-  
-
-
-
-
-
+        $body.append('<style>#BoxContent div { width:' + boxWidth + 'px;height:' + boxWidth + 'px;line-height:' + boxWidth + 'px; }</style>');
+        $boxes = $('#BoxContent div');
         // Mark a couple of boxes for testing and debugging
-       // $boxes.get(4).id = 'test';
-        //$boxes.get(52).id = 'test2';
+        $boxes.get(4).id = 'test';
+        $boxes.get(52).id = 'test2';
 
         $showBoundsCheck = $('#show-boundary');
         events.init();
 
         // Update the <div>s for the first time
-alert("Hello1")
-        //setInterval(function(){ alert("Hello2"); }, 3000);
-setInterval(function(){ _updateBoxes(); }, 30000);
-       //setInterval(_updateBoxes(),30000);
-
-       
+        _updateBoxes();
 
 
 
@@ -376,9 +366,7 @@ setInterval(function(){ _updateBoxes(); }, 30000);
     // Uses the jQuery plugin
     var _updateBoxes = function _updateBoxes() {
         // Reset all boxes to being considered out of view
-        //alert('aquiiiiii1');
-
-        $boxes = $('#gallery #contenido1 div');
+        //alert('aqui');
 
         $boxes
             .html('outss')
@@ -399,7 +387,7 @@ setInterval(function(){ _updateBoxes(); }, 30000);
 //console.log($boxes);
 
            
-/*
+
 
             var elem = document.getElementById("myElem");
  
@@ -419,7 +407,7 @@ var name = $(this).attr('id');
         myFun(name);
     }
 
-*/
+
      //console.log(name);
 
 console.log('----------------------------------------------');
@@ -473,7 +461,7 @@ console.log(window.listaVisibles);
 //window.listaV=window.listaV.concat(window.listaVisibles);
 //console.log('####listaV');
 
-removerFotos();
+
 
 
     }
